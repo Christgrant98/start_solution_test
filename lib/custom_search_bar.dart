@@ -7,7 +7,7 @@ class CustomSearchBar extends StatelessWidget {
   final String placeholder;
 
   const CustomSearchBar({
-    Key? key,
+    super.key,
     required this.icon,
     required this.placeholder,
   });

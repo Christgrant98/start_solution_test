@@ -15,21 +15,28 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SafeArea(
-        child: Scaffold(
-          backgroundColor: Color.fromARGB(255, 231, 209, 188),
-          body: Page(),
-          bottomNavigationBar: BottomNavBar(),
-        ),
-      ),
+      home: MainPage(),
     );
   }
 }
 
-class Page extends StatelessWidget {
-  const Page({
-    super.key,
-  });
+class MainPage extends StatelessWidget {
+  const MainPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      backgroundColor: Color.fromARGB(255, 231, 209, 188),
+      body: SafeArea(
+        child: PageContent(),
+      ),
+      bottomNavigationBar: BottomNavBar(),
+    );
+  }
+}
+
+class PageContent extends StatelessWidget {
+  const PageContent({super.key});
 
   @override
   Widget build(BuildContext context) {

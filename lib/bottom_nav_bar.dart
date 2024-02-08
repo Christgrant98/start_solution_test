@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -42,30 +41,22 @@ class BottomNavBarState extends State<BottomNavBar> {
           duration: const Duration(milliseconds: 400),
           tabBackgroundColor: const Color.fromARGB(255, 231, 209, 188),
           color: Colors.black,
-          tabs: const [
-            GButton(
-              icon: Icons.home,
-              iconColor: Color.fromARGB(255, 111, 66, 55),
-              iconActiveColor: Colors.white,
-            ),
-            GButton(
-              icon: Icons.search,
-              iconColor: Color.fromARGB(255, 111, 66, 55),
-              iconActiveColor: Colors.white,
-            ),
-            GButton(
-              icon: Icons.person,
-              iconColor: Color.fromARGB(255, 111, 66, 55),
-              iconActiveColor: Colors.white,
-            ),
-            GButton(
-              icon: Icons.notifications,
-              iconColor: Color.fromARGB(255, 111, 66, 55),
-              iconActiveColor: Colors.white,
-            ),
+          tabs: [
+            _buildMenuButton(icon: Icons.home),
+            _buildMenuButton(icon: Icons.search),
+            _buildMenuButton(icon: Icons.person),
+            _buildMenuButton(icon: Icons.notifications),
           ],
         ),
       ),
+    );
+  }
+
+  GButton _buildMenuButton({required IconData icon}) {
+    return GButton(
+      icon: icon,
+      iconColor: const Color.fromARGB(255, 111, 66, 55),
+      iconActiveColor: Colors.white,
     );
   }
 }
